@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.example.asus.tenthapp.Constant.Constant;
 import com.example.asus.tenthapp.Fragment.ballFragment;
+import com.example.asus.tenthapp.Fragment.heartFragment;
+import com.example.asus.tenthapp.Fragment.listFragment;
 
 public class MainActivity extends AppCompatActivity   {
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity   {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        this.myMenu = menu;
+//        this.myMenu = menu;
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -35,13 +36,15 @@ public class MainActivity extends AppCompatActivity   {
         switch (item.getItemId()){
             case (R.id.action_item1):
                 commitballFragment();
-//                Toast.makeText(MainActivity.this, "+1", Toast.LENGTH_LONG).show();
+
                 break;
             case (R.id.action_item2):
-                Toast.makeText(MainActivity.this, "+2", Toast.LENGTH_LONG).show();
+                commitlistFragment();
+//
                 break;
             case (R.id.action_item3):
-                Toast.makeText(MainActivity.this, "+3", Toast.LENGTH_LONG).show();
+                commitheartFragment();
+//
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -57,25 +60,27 @@ public class MainActivity extends AppCompatActivity   {
                 .commit();
     }
 
-//    private void commitballFragment() {
-//        ballFragment ballFragment = new ballFragment();
-//        getSupportFragmentManager()
-//                .beginTransaction()
-//                .replace(R.id.frame, ballFragment, "ball")
-//                .commit();
-//    }
+    private void commitlistFragment() {
+        listFragment ListFragment = new listFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.workSpace, ListFragment, Constant.LIST_FRAGMENT_TAG)
+//                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//                .addToBackStack(Constant.LIST_FRAGMENT_TAG)
+                .commit();
+    }
 
 
 
-//    private void commitheartFragment() {
-//        heartFragment HeartFragment = new heartFragment();
-//        getSupportFragmentManager()
-//                .beginTransaction()
-//                .replace(R.id.workSpace, HeartFragment, Constant.BALL_FRAGMENT_TAG)
+    private void commitheartFragment() {
+        heartFragment HeartFragment = new heartFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.workSpace, HeartFragment, Constant.HEART_FRAGMENT_TAG)
 //                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 //                .addToBackStack(Constant.BALL_FRAGMENT_TAG)
-//                .commit();
-//    }
+                .commit();
+    }
 
 
 

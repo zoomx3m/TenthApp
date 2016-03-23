@@ -77,7 +77,7 @@ public class ballFragment extends Fragment implements View.OnClickListener {
         animationSet.setFillAfter(true);
 
 //        animationSet.setInterpolator(getActivity(), R.anim.boun);
-//
+
         imageViewBall.startAnimation(animationSet);
 
 

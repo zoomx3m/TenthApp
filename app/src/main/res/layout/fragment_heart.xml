@@ -22,7 +22,7 @@
             android:background="@drawable/ic_heart" />
 
         <LinearLayout
-            android:id="@+id/linlay_5_2"
+            android:id="@+id/linlay_alpha"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@+id/iv_heart_FH"
@@ -52,10 +52,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linlay5_3"
+            android:id="@+id/linlay_rotate"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@id/linlay_5_2"
+            android:layout_below="@id/linlay_alpha"
             android:layout_marginTop="16dp"
             android:background="@color/colorHeart"
             android:orientation="horizontal"
@@ -82,10 +82,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linlay5_4"
+            android:id="@+id/linlay_scale"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@+id/linlay5_3"
+            android:layout_below="@+id/linlay_rotate"
             android:layout_marginEnd="48dp"
             android:layout_marginRight="48dp"
             android:layout_marginTop="16dp"
